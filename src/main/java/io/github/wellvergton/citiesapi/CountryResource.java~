@@ -1,11 +1,10 @@
 package io.github.wellvergton.citiesapi;
 
-import java.util.Optional;
+import java.util.Optional<T>;
 import io.github.wellvergton.citiesapi.countries.Country;
 import io.github.wellvergton.citiesapi.repository.CountryRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,14 +26,8 @@ public class CountryResource {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity getOne(@PathVariable Long id) {
+	public Country getOne(@PathVariable Long id) {
 		Optional<Country> optional = repository.findById(id);
-
-		if (optional.isPresent()) {
-			return ResponseEntity.ok().body(optional.get());
-		} else {
-			return ResponseEntity.notFound().build();
-		}
-
+		return optional.get();
 	}
 }
