@@ -2,7 +2,8 @@ package io.github.wellvergton.citiesapi;
 
 import io.github.wellvergton.citiesapi.countries.Country;
 import io.github.wellvergton.citiesapi.repository.CountryRepository;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +19,7 @@ public class CountryResource {
 	}
 	
 	@GetMapping
-	public List<Country> countries() {
-		return repository.findAll();
+	public Page<Country> countries(Pageable page) {
+		return repository.findAll(page);
 	}
 }
