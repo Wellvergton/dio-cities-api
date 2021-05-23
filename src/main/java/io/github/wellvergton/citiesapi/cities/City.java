@@ -69,8 +69,8 @@ public class City {
 		return geolocation;
 	}
 
-	/*public Point getLocation() {
+	public Point getLocation() {
 		return location;
-	}*/
+	}
 
 }
