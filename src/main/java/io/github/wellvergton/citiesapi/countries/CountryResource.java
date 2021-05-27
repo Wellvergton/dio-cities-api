@@ -2,7 +2,7 @@ package io.github.wellvergton.citiesapi.countries;
 
 import java.util.Optional;
 import io.github.wellvergton.citiesapi.countries.Country;
-import io.github.wellvergton.citiesapi.countries.repository.CountryRepository;
+import io.github.wellvergton.citiesapi.countries.CountryRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
